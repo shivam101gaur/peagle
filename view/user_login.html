@@ -1,0 +1,67 @@
+<!-- 
+  
+*********
+  
+  
+  pending task : resize to responsive page (vmin/vh/vw/%) 
+
+
+
+      
+
+                                                                      -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/w3.css">
+    
+    
+  
+    <script src = 'script/userscript.js'></script>
+
+</head>
+<body>
+
+
+    <div id = 'btnAdminDiv' ><!--  admin button and icon division -->
+        <button title="open home page" 
+                class="w3-button w3-red w3-round" id= 'btnHome'
+                onclick="window.open('home.html','_self')">Home</button>
+    </div>
+  
+  
+    <div class="w3-card-4"  id= 'login-container'>
+        <div class="w3-container w3-green" >
+          <h2>User Login</h2>
+        </div>
+    
+        <form class="w3-container" method="POST" action="login-action.php" id="loginform" >
+          <p>
+            <label>Bot Name</label>
+            <input name = 'bot_name'maxlength="7" minlength="4" required class="w3-input" type="text" autofocus style="outline: none;"> 
+          </p>
+          <p>    
+            <label>Bot Key </label>  
+          <input name = 'bot_key' maxlength="7" minlength="4"  required class="w3-input" type="password"  id="botkey" style="outline: none;">
+         <button id = 'eyebutton' type="button" class=" w3-hover-shadow   w3-right w3-white   " >
+                    
+                    
+                    <i class="fa fa-eye" onclick="toggle_password_visibility('botkey')" style="font-size:16px;color: #009688;"></i>
+         </button>
+          </p>
+          <input name = "login" type="submit"  value = "submit" class="w3-btn w3-green w3-ripple">
+          
+        </form>
+      </div></div>
+    
+    
+    
+    <p   id ='lable-peagle' class = " w3-wide    " title="(ctrl + F11) switch to full screen mode for best experience " >PEAGLE</p>
+    
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    <link rel="stylesheet" href="style/home.css">
+    <title>Home</title>
+    <style>
+
+        /* class to pause animations while content is being loaded */
+        .js-loading *,
+        .js-loading *:before,
+        .js-loading *:after
+                 {
+                    animation-play-state: paused !important;
+                 }
+        
+        /* class to hide the cursor */
+        .noCursor{
+                    cursor: none;
+                    pointer-events: none;
+                 }
+
+         body {user-select: none;}  /* body styling */
+
+        /* adding local fonts */
+
+        @font-face {
+            font-family:coalition ;
+            src: url('style/fonts/Coalition_v2..ttf');
+        }
+
+        @keyframes fadeInAnimation { 
+            0% { 
+                opacity: 0; 
+            } 
+            100% { 
+                opacity: 1; 
+            } 
+            } 
+
+        button:hover{
+            transform: scale(1.1);
+        }   
+
+        
+    </style>
+
+</head>
+
+
+
+<!-- call display button function after 6 seconds (animation time) -->
+
+<body bgcolor="black"  onload="setTimeout(displayButton,6000);"  >
+
+
+    <div 
+        id="peaglediv"
+        class="noCursor">
+
+        PEAGLE
+
+        <p>
+            
+            Anytime .... from Anywhere.
+            
+        </p>
+    </div>
+
+    <div  id="button">
+        <button type='button'
+                id="userbutton"
+                onclick="window.open('checker.php', '_self');"
+                title="click to login as user">
+                
+                USER    </button>
+        
+        <button type='button'
+                id="adminbutton"
+                title = "feature coming soon!.">
+                ADMIN   </button>
+    </div>
+   
+   
+   
+   
+   <script>
+
+        document.body.classList.add('js-loading');
+        
+        
+        window.addEventListener("load", showPage);
+        window.addEventListener("load", hideCursor);
+        var root = document.getElementsByTagName( 'html' )[0];
+       
+
+      
+
+        function showPage() 
+        {
+            document.body.classList.remove('js-loading');
+        }
+
+        function hideCursor()
+        {
+            root.classList.add('noCursor');
+            
+            
+        }
+
+        function displayButton() 
+        {
+            document.getElementById('button').style.visibility='visible';
+            root.classList.remove('noCursor');
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+
+
+
+  p#lable-peagle {
+    user-select: none;
+    font-family: Anurati;
+    font-size: 180px;
+    text-shadow: 3px 5px 6px #000000b0;
+    color: black;
+    position: absolute;
+    top: 600px;
+    left: 1000px;
+    margin: 20px;
+    padding: 10px;
+
+
+    animation: fadeInAnimation ease-in 5s; 
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+} 
+
+
+
+body {
+    /* background settings */
+    background-image: url('background/robocar-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* font settings */
+    font-family: SpaceAge;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* font-family: 'Orbitron', sans-serif; */   
+}
+
+div#btnAdminDiv {
+    outline: none;
+    font-weight: bold;
+    margin: 5px;
+    position: absolute;
+    top: 3%;
+    left: 85%;
+}
+
+#btnHome{
+    outline: none;
+}
+
+#btnHome:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+
+
+#login-container {
+    position: absolute;
+    top: 50px;
+    left: 10px
+}
+
+#eyebutton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+#eyebutton {
+    outline: none;
+    position: relative;
+    bottom: 35px;
+    border-color: white;
+}
+
+.w3-input {
+    margin: 2px;
+    margin-top: 10px;
+    padding: 5px;
+    color: teal;
+    background-color: white;
+    font-weight: bold;
+    font-size: x-large;
+    font-style: normal;
+}
+
+#login-container {
+    width: fit-content;
+    padding: 5px;
+    position: relative;
+    left: 160px;
+    top: 210px;
+}

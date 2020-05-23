@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+body{margin: 0; height: 100%; width: 100%;  overflow: hidden;user-select: none;}
+
+#peaglediv
+{
+        font-family: coalition;
+        font-size: 28vmin;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        height: 70%;
+        width: 100%;
+        text-align: center;
+        padding: 0%;
+        padding-top: 10%;
+
+        
+        color: white;
+        animation: fadeInAnimation ease-in 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+}
+
+div#button
+{
+    position: absolute;
+    top: 75%;
+    left: 0%;
+    visibility: hidden;
+    height: 15%;
+    width: 100%;
+    
+}
+
+
+#userbutton
+{
+    position: absolute;
+    left: 15%;
+    outline: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5vmin;
+    width: 7%;
+    height: 25%;
+    padding: 0%;
+
+     background-color: #4CAF50;
+        color: white;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+
+    
+    }
+    
+       
+
+#adminbutton
+{
+    position: absolute;
+    left: 75%;
+    outline: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5vmin;
+    width: 7%;
+    height: 25%;
+
+    cursor: not-allowed;
+    background-color: rgb(246, 51, 51);
+        color: white;
+    border: none;
+    text-align: center;
+    display: inline-block;
+   
+}
+
+ div>p{                  /*anytime anywhere */
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.48vmin;
+    position: absolute;
+    top:55%;
+    left:75% ;
+}
+

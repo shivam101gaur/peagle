@@ -1,0 +1,361 @@
+body{
+    background-color:white;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    letter-spacing: 0.1vmin;
+}
+
+div#controlBoard
+{
+    height: 30%;
+    width: 90%;
+    background-color: transparent;
+    opacity: 1;
+    
+    /* border: 0.15vmin solid black;  */
+    
+    position: absolute;
+    top: 63%;
+    left: 5%;
+    z-index: 1;
+    
+}
+
+
+
+.arrow {
+    
+    width: 4vmin;
+    height: 4vmin;
+    background: transparent;
+    border-top: 1.3vmin solid olivedrab;
+    border-right: 1.3vmin solid olivedrab;
+    box-shadow: 0 0 0 white;
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+.arrow.front
+{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    transform:  rotate(-45deg);
+}
+
+
+.arrow.back
+{
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    transform:  rotate(135deg);
+}
+.arrow.left {
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    transform:  rotate(-135deg);
+}
+.arrow.right {
+    position: absolute;
+    top: 70%;
+    left: 90%;
+    transform: rotate(45deg);
+}
+.arrow:active {
+    border-color: orange;
+    
+    box-shadow:  0.7vmin -0.7vmin 0 rgb(153, 28, 28);
+}   
+.arrow:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -60%) rotate(45deg);
+    width: 200%;
+    height: 200%;
+}
+
+
+#speedslider
+{
+    position: absolute;
+    left: 10%;
+    top: 54%;
+    transform: rotate(-90deg);
+    -webkit-appearance: none;
+    appearance: none;
+    width: 19vh; 
+    height: 0.625vw;
+    outline: none;
+    background: linear-gradient(to right, rgb(0, 255, 98) 0%, rgb(209, 246, 0) 50%, rgb(255, 61, 2) 100%);
+    border-radius: 3.08vh;
+}
+
+#speedslider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    
+    
+    width: 3.08vmin; 
+    height: 3.08vmin; 
+    border-radius: 100%;
+    border: 0.3vmin solid rgb(0, 151, 101);
+    background: white;
+    margin: 0;
+    cursor: pointer; 
+
+    }
+
+#rotateSpeedSlider
+{
+    position: absolute;
+    left: 79.2%;
+    top: 45%;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12.1vw; 
+    height: 1.23vh;
+    outline: none;
+    background: linear-gradient(to right, rgb(0, 255, 98) 0%, rgb(209, 246, 0) 50%, rgb(255, 61, 2) 100%);
+    border-radius: 3.08vh;
+}
+
+#rotateSpeedSlider::-webkit-slider-thumb {
+  
+        -webkit-appearance: none; 
+        appearance: none;
+        
+        width: 3.08vmin; 
+        height: 3.08vmin;
+        
+        border-radius: 100%;
+        background: black;
+        border-radius: 50%;
+        margin: 0;
+        background: radial-gradient(circle at 1.08vmin 1.08vmin, #a1e00e, rgb(8, 149, 3));
+        cursor: pointer; 
+  }
+
+
+  #speedcontainer
+{
+    width: 6.17vh;
+    height: 4.6875vw;
+    background: rgb(0, 255, 213);
+    position: absolute;
+    left: 13.7%;
+    top: 93%;
+    transform: rotate(90deg);
+    text-align: center;
+    
+
+  }
+#speedcontainer:before 
+{
+    transform: rotate(0deg);
+    content: "";
+    position: absolute;
+    right: 78%;
+    top: 33%;
+    width: 0;
+    height: 0;
+    border-top: 0.78vw solid transparent;
+    border-right: 3.395vh solid rgb(0, 255, 213);
+    border-bottom: 0.78vw solid transparent;
+}
+div#speedcontainer>span
+{   position: absolute;
+    margin-top: 55%;
+    margin-left: -22%;
+    display: inline-block;
+    transform: rotate(-90deg);
+    color: blue;
+    font-size: 1.5vmin;
+    font-family: 'orbitron';
+    letter-spacing: 0.1vmin;
+    
+}
+
+
+#rotatespeedcontainer 
+{
+    width: 6.17vh;
+    height: 4.6875vw;
+    background: rgb(0, 255, 213);
+    position: absolute;
+    left: 74%;
+    top: 32.5%;
+    transform: rotate(180deg);
+
+}
+#rotatespeedcontainer:before
+{
+    transform: rotate(0deg);
+    content: "";
+    position: absolute;
+    right: 78%;
+    top: 33%;
+    width: 0;
+    height: 0;
+    border-top: 0.78vw solid transparent;
+    border-right: 3.395vh solid rgb(0, 255, 213);
+    border-bottom: 0.78vw solid transparent;
+}
+div#rotatespeedcontainer>span
+{
+    display: inline-block;
+    transform: rotate(-180deg);
+    margin-top: 53%;
+    margin-left: 22%;
+    font-family: 'orbitron';
+    font-size: 1.5vmin;
+    letter-spacing: 0.1vmin;
+    color: blue;
+} 
+
+#movetime{
+    border:0.2vmin solid rgb(16, 0, 104);
+    color: rgb(16, 0, 104);
+    border-radius:10%;
+    outline: none;
+    width: 4vw;
+    height: 5vh;
+    text-align: center;
+}
+
+#movetimecontainer
+{   position: absolute;
+    left: 7%;
+    color: rgb(83, 83, 83);
+    font-family: 'spaceage';
+    font-size: 2.2vmin;
+    letter-spacing: 0.1vmin;
+    
+}
+#turntime{
+    border:0.2vmin solid rgb(16, 0, 104);
+    color: rgb(16, 0, 104);
+    border-radius:10%;
+    outline: none;
+    width: 4vw;
+    height: 5vh;
+    text-align: center;
+}
+
+#turntimecontainer
+{   position: absolute;
+    left: 80%;
+    color: rgb(83, 83, 83);
+    font-family: 'spaceage';
+    font-size: 2.2vmin;
+    letter-spacing: 0.1vmin;
+    
+}
+
+
+
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+div#videofeed
+{   
+    position: absolute;
+    top: 0vmin;
+    left: 0vmin;
+    height: 55%;
+    width: 60%;
+    z-index: -1;
+    margin: 5vmin;
+    padding: 0vmin;
+    background-color: transparent;
+    border: 0.3vmin solid green;
+}
+
+/* #enlargescreenicon
+{
+    position: absolute;
+    top: 61%;
+    left: 88%;
+    font-size: 4vmin;
+    color: darkgreen;
+    
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    outline: none;
+}
+#enlargescreenicon:active
+{
+    box-shadow: 0.15vmin 0.15vmin 0.3vmin 0.3vmin grey;
+    font-size: 3.4vmin;
+} */
+
+
+#feedbox
+{
+
+  font-family : 'spaceAGE';
+  position: absolute;
+  height: 55%;
+  width: 30%;
+  left: 68%;
+  top: 5%;
+
+  
+}
+
+#connectbtn
+{
+    position: absolute;
+    left: 88.5%;
+    top: 0%;
+    outline: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5vmin;
+    letter-spacing: 0.1vmin;
+    width: 5%;
+    height: 5%;
+    padding: 0%;
+
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+
+}
+#logoutbtn
+{
+    position: absolute;
+    left: 94%;
+    top: 0%;
+    outline: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5vmin;
+    letter-spacing: 0.1vmin;
+    width: 5%;
+    height: 5%;
+    padding: 0%;
+
+    background-color: rgb(231, 30, 30);
+    color: white;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+#logoutbtn:hover,#connectbtn:hover
+{
+    background-color: grey;
+    width: 5.2%;
+    height: 5.2%;
+
+}

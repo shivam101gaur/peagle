@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>control panel</title>
+
+    <link rel="stylesheet" href="./style/controlpanel.css">
+    <link rel="stylesheet" href="./style/w3.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div id="feedbox"> 
+
+        <div id="gpsfeedbox" style="visibility: hidden;">
+                <span style="position:absolute;top: 0%;left: 0%; font-size: 3vmin;font-weight: bold;text-decoration: underline;margin: 1.4vmin;color: darkblue;">GPS </span>
+                 
+                <span style="font-size: 2vmin;position: absolute;left: 15%;top: 14%;">lattitude : </span>
+                <span id="lattitudevalue" style="position: absolute;left: 50%;top: 14%;color: rgb(255, 46, 81);font-size: 2vmin;"></span>
+                
+                <span style="font-size: 2vmin;position: absolute;left: 15%;top: 22%;">longitude : </span>
+                <span id="longitudevalue" style="position: absolute;left: 50%;top:22%;color: rgb(255, 46, 81);font-size: 2vmin;"></span>
+        </div>
+        <div id="distancefeedbox" style="visibility: hidden;">
+
+            <span style="position:absolute;top: 30%;left: 0%; font-size: 3vmin;font-weight: bold;text-decoration: underline;margin: 1.4vmin;color: darkblue;">distance </span>
+                 
+                <span style="font-size: 2vmin;position: absolute;left: 15%;top: 43%;">Object in front : </span>
+                <span id="objfront" style="position: absolute;left: 62%;top: 43%;color: rgb(255, 46, 81);font-size: 2vmin;"></span>
+                
+                <span style="font-size: 2vmin;position: absolute;left: 15%;top: 50%;">Object behind : </span>
+                <span id="objback" style="position: absolute;left: 62%;top:50%;color: rgb(255, 46, 81);font-size: 2vmin;"></span>
+        </div>
+
+        <div id="messagefeedbox" style="visibility: hidden;">
+
+            <span style="position:absolute;top: 55%;left: 0%; font-size: 3vmin;font-weight: bold;text-decoration: underline;margin: 1.4vmin;color: darkblue;">Message </span>
+                 
+                <span style="font-size: 2vmin;position: absolute;left: 15%;top: 68%;">pi said : </span>
+                <span id="message" style="position: absolute;left: 40%;top: 68%;color: rgb(0, 190, 117);font-size: 2vmin;"></span>
+                
+                <span style="font-size: 2vmin;position: absolute;left: 15%;top: 78%;">WARNING : </span>
+                <span id="warning" style="position: absolute;left: 40%;top:78%;color: rgb(255, 17, 57);font-size: 1.8vmin;"></span>
+        </div>
+        
+    </div>
+    
+    <div id = "controlBoard">
+
+        <!-- arrow button containers below -->
+        
+       <span id="movetimecontainer"><input type="number" id= 'movetime' placeholder="0" min="2" >&nbsp;sec</span>
+         
+        <div  class="arrow front" id="front" ></div>
+        
+        
+        <div class="arrow back" id="back"></div>
+            
+            
+        
+                
+        <!--container for speed slider-->        
+                    
+        <input type="range" id="speedslider" min = 25 max = 100 step = 25 value = 75  >        
+        
+        <!-- speed info container -->
+
+        <div id="speedcontainer"><span></span></div>
+            
+        <!-- container for left right buttons -->
+                
+    
+
+        <span id="turntimecontainer"><input type="number" id= 'turntime' placeholder="0" min="1" >&nbsp;sec</span>
+            
+        <div  class="arrow left" id="left"></div>
+        <div class="arrow right" id="right"></div>
+
+    
+                
+        <!-- container for turning speed slider     -->
+        
+        <input type="range" id="rotateSpeedSlider" min = 50 max = 100 step = 25 value = 75 > 
+        
+        <div id="rotatespeedcontainer"><span></span></div>
+
+
+    </div>
+
+    <div id="videofeed">
+        <span style="position: absolute;top: 40%;left: 10%;font-size:1.9vw;font-family: SpaceAge;color: rgb(11, 40, 134);text-shadow: 0.15vmin 0.15vmin 0.3vmin  black;">
+            Peagle is not streaming any Video
+        </span>
+    </div>
+
+    <!-- <i class="material-icons" id = "enlargescreenicon" onclick="fullscreen()" >fullscreen</i> -->
+
+    <button  id="connectbtn" onclick="connect()" >Connect</button>
+   
+    <button  id="logoutbtn" onclick="logout()" >Logout</button>
+    <!-- <a href="http://192.168.0.27/client/checker.php">disconect</a> -->
+    
+
+
+    <!-- warning : script section below -->
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./script/controlpanel.js"></script>
+    <script>
+
+        function connect() {   window.open('http://192.168.0.27:8080/', '_self');}
+        function logout() { window.open('http://192.168.0.27/client/logout.php','_self');}    
+        function disconect() {window.open('http://192.168.0.27:8080/', '_self');}   
+    </script>
+
+</body>
+</html>                
