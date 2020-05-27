@@ -1,4 +1,5 @@
 var socket = io();
+socket.emit('to_Server','user connected');
 
 function sendtoRpi(msg) { socket.emit('from_User',msg); } // msg can be off any data type.
 
@@ -13,7 +14,7 @@ window[msg.name](msg); //calling function with name as incoming msg object name
 
 var move = {name : 'move',movespeed:'medium',direction:'front',time:0};  
 var turn = {name : 'turn',sensitivity:'medium',direction:'right',time:0};
-var stop = {name : 'stop',command:'stop robot! -- GPIO.cleanup(); to be changed after rpi setup'};
+var stop = {name : 'stop',command:'stop'};
 var mesge = {name : 'messge',message:"",warning:""};
 
 
@@ -65,43 +66,28 @@ speedslider.addEventListener('change',()=>
     switch(speed)
     {
       case '50':
-        move['speed'] = 'low';
+        move['movespeed'] = 'low';
         speedcontainervalue.innerHTML = 'LOW';
         break;
       case '75':
-        move['speed'] = 'medium';
+        move['movespeed'] = 'medium';
         speedcontainervalue.innerHTML = 'MED';
         break;
       case '100':
-        move['speed'] = 'high';
+        move['movespeed'] = 'high';
         speedcontainervalue.innerHTML = 'HIGH';
         break;
       default:
-        move['speed'] = 'zero';
+        move['movespeed'] = 0;
         speedcontainervalue.innerHTML = 'STOP!';
+        sendtoRpi(stop);
     }
 
 });
 
-movetime.addEventListener('input',()=>{
+movetime.addEventListener('input',()=>{ if(movetime.value.length!=0){move['time']=movetime.value;}else{move['time']=0}  })
 
-  if(movetime.value>=2)
-  {
-    move['time']=movetime.value;
-  }
-  
-  
-})
-
-turntime.addEventListener('input',()=>{
-
-  if(turntime.value>=1)
-  {
-    turn['time']=turntime.value;
-    
-    
-  }
-})
+turntime.addEventListener('input',()=>{ if(turntime.value.length!=0) {turn['time']=turntime.value;}else{turn['time']=0} })
 
 
 rotatespeedcontainervalue.innerHTML = 'MED';
@@ -140,14 +126,13 @@ rightBtn.addEventListener("mousedown",rightBtnPressed);
 
 function frontBtnPressed() 
 {
-    console.log('mouse down');
+    
     move['direction']='front';
     sendtoRpi(move);                                              // move command sent to RPi with attributes - dir and speed
     controlBoard.addEventListener('mouseup',function frontBtnReleased()
                                                       {   
-                                                        console.log('mouse up');
-                                                           
-                                                      sendtoRpi(stop);    
+                                                        
+                                                      if (move['time']==0) {sendtoRpi(stop);}     
                                                       controlBoard.removeEventListener('mouseup',arguments.callee);
                                                       });
     
@@ -161,7 +146,7 @@ function backBtnPressed()
     controlBoard.addEventListener('mouseup',function backBtnReleased()
                                                     { 
                                                                                                           
-                                                      sendtoRpi(stop);
+                                                      if (move['time']==0) {sendtoRpi(stop);}
                                                       controlBoard.removeEventListener('mouseup',arguments.callee);
                                                     
                                                     });    
@@ -173,7 +158,7 @@ function leftBtnPressed() {
     controlBoard.addEventListener('mouseup',function leftBtnReleased()
                                                     {
 
-                                                    sendtoRpi(stop);                                                       
+                                                    if (turn['time']==0) {sendtoRpi(stop);}                                                       
                                                     controlBoard.removeEventListener('mouseup',arguments.callee);
 
                                                     });
@@ -186,7 +171,7 @@ function rightBtnPressed() {
     controlBoard.addEventListener('mouseup',function rightBtnReleased()
                                                     {
 
-                                                    sendtoRpi(stop);
+                                                    if (turn['time']==0) {sendtoRpi(stop);}
                                                     controlBoard.removeEventListener('mouseup',arguments.callee);
                                                     
                                                     });

@@ -21,14 +21,14 @@ app.get('/', (req, res) => {  res.sendFile(__dirname + '/view/control_system.htm
 io.on('connect', (socket) => {
 
 
-console.log('user connected with socket id:',socket.id);
+
+socket.on('to_Server',(msg)=>{console.log(msg,'with id ',socket.id);});
 socket.on('from_User',(msg)=>{socket.broadcast.emit('from_Server',msg);});
 socket.on('from_Rpi',(msg)=>{socket.broadcast.emit('from_Server',msg);});
 
 
-socket.on('disconnect', () => {
-console.log('user disconnected');
-});
+socket.on('disconnect', () => {console.log('-- disconnected --');});
+
 });
 
 
