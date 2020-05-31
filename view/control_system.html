@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="./style/controlpanel.css">
     <link rel="stylesheet" href="./style/w3.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
 
 </head>
 <body>
@@ -67,11 +67,12 @@
         <!-- speed info container -->
 
         <div id="speedcontainer"><span></span></div>
-            
-        <!-- container for left right buttons -->
-                
-    
 
+        <div id = "googleMap"></div>
+
+        
+        <!-- container for left right buttons -->
+    
         <span id="turntimecontainer"><input type="number" id= 'turntime' placeholder="0" min="1" >&nbsp;sec</span>
             
         <div  class="arrow left" id="left"></div>
@@ -113,6 +114,7 @@
         function logout() { window.open('http://192.168.0.27/client/logout.php','_self');}    
         function disconect() {window.open('http://192.168.0.27:8080/', '_self');}   
     </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZDJQSyK-ZjsTx6FJwileBTCDfHybSgH4&callback=initmap"></script>
 
 </body>
 </html>                

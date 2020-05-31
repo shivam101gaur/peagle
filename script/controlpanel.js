@@ -9,6 +9,13 @@ window[msg.name](msg); //calling function with name as incoming msg object name
 
 });
 
+//defining variables
+
+var botPos = { lat  :19.060503, lng : 72.824097 };  //default position of bot
+var map;
+var marker;
+var buffPos;
+
 
 //objects to be sent 
 
@@ -205,15 +212,45 @@ function distancefeed(obj)
 
 function gpsfeed(obj)
 {
-  if(obj.updateflag=='true')
-  {
+  
   gpsfeedbox.style.visibility="visible";
   lattitude.innerHTML = obj.latitude;
   longitude.innerHTML = obj.longitude;
+  if(obj.latitude!=0){
+    buffPos = obj;
+    botPos.lat = obj.latitude;
+    botPos.lng = obj.longitude;
   }
-  else if(obj.updateflag=='false')
-  {
-    gpsfeedbox.style.visibility = "hidden";
+  else{
+    try
+    {
+      botPos = {lat:buffPos.latitude,lng:buffPos.longitude};
+    }
+    catch
+    {    
+      botPos = { lat  :19.060503, lng : 72.824097 };
+    }
   }
+  moveBus();
+  
+  //enable below after waiting for few seconds
+  //gpsfeedbox.style.visibility = "hidden";
+  
 }
- 
+
+function initmap()
+{
+  
+  var mapProperties = 
+    {
+        center : botPos,
+        zoom:15
+    };
+    map = new google.maps.Map(document.getElementById("googleMap"),mapProperties);
+    marker = new google.maps.Marker({ position : botPos, map : map });
+}
+function moveBus() 
+{
+  marker.setPosition(botPos);
+  map.panTo(botPos);
+}
