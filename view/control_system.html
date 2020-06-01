@@ -100,7 +100,7 @@
     <button  id="connectbtn" onclick="connect()" >Connect</button>
    
     <button  id="logoutbtn" onclick="logout()" >Logout</button>
-    <!-- <a href="http://192.168.0.27/client/checker.php">disconect</a> -->
+    
     
 
 
@@ -110,9 +110,11 @@
     <script src="./script/controlpanel.js"></script>
     <script>
 
-        function connect() {   window.open('http://192.168.0.27:8080/', '_self');}
-        function logout() { window.open('http://192.168.0.27/client/logout.php','_self');}    
-        function disconect() {window.open('http://192.168.0.27:8080/', '_self');}   
+        function connect() {   window.open('http://'+location.hostname+':8080/', '_self');}
+        
+        
+        function logout() { window.open('http://'+location.hostname+'/client/logout.php','_self');}    
+           
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZDJQSyK-ZjsTx6FJwileBTCDfHybSgH4&callback=initmap"></script>
 
