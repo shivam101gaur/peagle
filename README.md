@@ -8,6 +8,7 @@ Peagle is a webapp that uses socket.io. to implement **web sockets** for live co
 **[The Robot](https://github.com/shivam101gaur/peagle-rpi/tree/master#readme)**
 
 The robot here is a raspberry pi operated car robot. The wheels (motors) were controlled via L298N H-Bridge. It had sensors like GPS and Distance Sensors which sent required information to server and ultimately to user and was backed up by a 27V battery. 
+**Nodejs** is used to run server and implement websockets, while **Python** is used to control and send signals to electronic parts and ultimately control the robot. 
 
 **Peagle Web App**
 
