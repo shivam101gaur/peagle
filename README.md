@@ -26,8 +26,10 @@ User can login by using thier creditionals and then access control panel page. U
     ```
  - **Step 3** : Open webapp on web browser 
 
-## **screen-shots**
-
-![control panel](./style/screen-shots/control.png)
-![control panel](./style/screen-shots/control.png)
+## **Screen Shots**
+  ### **Welcome Page**
+  ![control panel](./style/screen-shots/welcome.png)
+  ### **Login Page**
+![control panel](./style/screen-shots/login.png)
+  ### **Control Page**
 ![control panel](./style/screen-shots/control.png)
