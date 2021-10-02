@@ -20,11 +20,25 @@ User can login by using thier creditionals and then access control panel page. U
    node server.js
   ```
 - **Step 2** : Switch on  raspberry pi  and then
-    run index.js in Raspberry-Pi 
+    [run index.js in Raspberry-Pi ](https://github.com/shivam101gaur/peagle-rpi/tree/master#readme)
     ```
      sudo node index.js
     ```
  - **Step 3** : Open webapp on web browser 
+
+## Published Paper
+  - http://www.ijirt.org/Article?manuscript=149689
+
+
+## **Project Design**
+  ![control panel](./style/screen-shots/projectarchitecture.png)
+
+  ![control panel](./style/screen-shots/botdesign.png)
+
+  ![control panel](./style/screen-shots/connection.png)
+
+  ![control panel](./style/screen-shots/bot.png)
+
 
 ## **Screen Shots**
   ### **Welcome Page**
@@ -33,3 +47,6 @@ User can login by using thier creditionals and then access control panel page. U
 ![control panel](./style/screen-shots/login.png)
   ### **Control Page**
 ![control panel](./style/screen-shots/control.png)
+
+## Developer
+- [Shivam Gaur](https://github.com/shivam101gaur)
