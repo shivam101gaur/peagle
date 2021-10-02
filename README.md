@@ -47,7 +47,7 @@ User can login by using thier creditionals and then access control panel page. U
 
 
 ## **Screen Shots**
-****
+
   ### **Welcome Page**
   ![control panel](./style/screen-shots/welcome.png)
   ****
