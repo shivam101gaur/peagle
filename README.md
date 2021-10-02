@@ -34,21 +34,29 @@ User can login by using thier creditionals and then access control panel page. U
 
 ## **Project Design**
   ![control panel](./style/screen-shots/projectarchitecture.png)
+  ****
 
   ![control panel](./style/screen-shots/botdesign.png)
+  ****
 
   ![control panel](./style/screen-shots/connection.png)
+  ****
 
   ![control panel](./style/screen-shots/bot.png)
+  
 
 
 ## **Screen Shots**
+****
   ### **Welcome Page**
   ![control panel](./style/screen-shots/welcome.png)
+  ****
   ### **Login Page**
 ![control panel](./style/screen-shots/login.png)
+****
   ### **Control Page**
 ![control panel](./style/screen-shots/control.png)
+
 
 ## Developer
 - [Shivam Gaur](https://github.com/shivam101gaur)
